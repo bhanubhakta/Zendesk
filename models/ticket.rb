@@ -5,7 +5,7 @@ class Ticket < Base
   # This ticket is using file as a data source
   FILE_NAME = File.expand_path('../../data_source/tickets.json', __FILE__)
   DATATYPES = {
-    '_id': 'string',
+    '_id': 'integer',
     'url': 'string',
     'external_id': 'string',
     'created_at': 'datetime',
