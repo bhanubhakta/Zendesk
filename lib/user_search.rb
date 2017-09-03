@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 unless defined?(Search)
   require File.expand_path('../../lib/search.rb', __FILE__)
 end
@@ -75,7 +76,7 @@ class UserSearch < Search
   def preetify
     preety_print do |instance|
       puts 'organization_name'.ljust(30) + instance['organization']['name'].to_s
-      %w(submitted_tickets assigned_tickets).each do |tickt|
+      %w[submitted_tickets assigned_tickets].each do |tickt|
         instance[tickt].each_with_index do |ticket, index|
           puts "#{tickt}_#{index}".to_s.ljust(30) + ticket['subject'].to_s
         end

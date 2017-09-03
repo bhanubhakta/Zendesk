@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # class to search. Base search.
 class Search
   attr_accessor :type, :field_value, :instances

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 unless defined?(Search)
   require File.expand_path('../../lib/search.rb', __FILE__)
 end

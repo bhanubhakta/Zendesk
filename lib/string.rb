@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # For constantizing a string
 class String
   def constantize

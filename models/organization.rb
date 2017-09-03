@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Organization domain class.
 class Organization < Base
   # This organization is using file as a data source

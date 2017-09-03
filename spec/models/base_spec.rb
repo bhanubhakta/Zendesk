@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require File.expand_path('../../../models/base.rb', __FILE__)
 require 'json'
 describe Base do

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # User domain class.
 class User < Base
   # This user is using file as a data source

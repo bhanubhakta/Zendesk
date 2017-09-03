@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 unless defined?(Search)
   require File.expand_path('../../lib/search.rb', __FILE__)
 end
@@ -73,7 +74,7 @@ class TicketSearch < Search
       org = instance['organization'] || { 'name' => 'N/A' }
       puts 'organization_name'.to_s.ljust(30) + org['name']
 
-      %w(submitter assignee).each do |user_key|
+      %w[submitter assignee].each do |user_key|
         user = instance[user_key] || { 'name' => 'N/A' }
         puts user_key.ljust(30) + user['name']
       end

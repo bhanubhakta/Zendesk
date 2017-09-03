@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'json'
 
 Dir['./*/*.rb'].each do |file|

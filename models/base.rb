@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Base class for other models.
 class Base
   attr_accessor :file_name, :instances

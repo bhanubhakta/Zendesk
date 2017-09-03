@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Ticket domain class.
 class Ticket < Base
   # This ticket is using file as a data source
