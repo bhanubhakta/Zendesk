@@ -20,7 +20,7 @@ until quit
   p "  * Type 'quit' to exit"
 
   option = gets.chomp
-  # p option
+  
   if option == '1'
     p 'Select 1) Users or 2) Tickets or 3) Organizations'
     resource = gets.chomp.to_i
