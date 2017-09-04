@@ -56,7 +56,7 @@ until quit
     end
     p '*****Search organizations with:'
     Organization::DATATYPES.keys.each do |key|
-      p key
+      p key.to_s
     end
   elsif option == 'quit'
     quit = true
