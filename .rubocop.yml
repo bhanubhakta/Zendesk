@@ -36,7 +36,7 @@ Metrics/LineLength:
   Max: 100
 
 Metrics/MethodLength:
-  Max: 25
+  Max: 15
 
 Metrics/ModuleLength:
   Exclude:

@@ -71,4 +71,3 @@ describe OrganizationSearch do
     end
   end
 end
-

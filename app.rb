@@ -12,7 +12,7 @@ p "Type 'quit' to exit any time, Press 'Enter' to continue"
 
 quit = gets.chomp == 'quit' ? true : false
 
-while(!quit)
+until quit
 
   p ' Select search options'
   p '  * Press 1 to search Zendesk'

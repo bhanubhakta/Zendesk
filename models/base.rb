@@ -18,10 +18,24 @@ class Base
   def all
     begin
       @instances ||= JSON.parse(File.read(self.class::FILE_NAME))
-    rescue Exception => e
+    rescue StandardError => e
       raise e
     end
     instances
+  end
+
+  def filtered(field_val, field, value)
+    datatype = self.class::DATATYPES[field]
+    field_val = field_val.to_s
+    case datatype
+    when 'integer', 'datetime'
+      # This can be preety complicated
+      # afterwards; especially when comparison
+      # has to be made.
+      field_val == value
+    else
+      field_val.downcase.include? value.downcase
+    end
   end
 
   # This operator is passed here so that we can extend
@@ -39,30 +53,10 @@ class Base
   # Returns the record containing the id value 1.
   def where(field_value)
     results = []
-    begin
-      field_value.each do |field, value|
-        results += instances.select do |instance|
-          field_val = instance[field.to_s]
-        
-          if value.to_s.strip == ''
-            field_val.to_s == value.to_s
-          else
-            case self.class::DATATYPES[field]
-            when 'integer'
-              field_val.to_s == value.to_s
-            when 'datetime'
-              # This can be preety complicated
-              # afterwards; especially when comparison
-              # has to be made.
-              field_val.to_s == value.to_s
-            else
-              field_val.to_s.downcase.include? value.to_s.downcase
-            end
-          end
-        end
+    field_value.each do |field, value|
+      results += instances.select do |instance|
+        filtered(instance[field.to_s], field, value.to_s)
       end
-    rescue Exception => e
-      raise e
     end
     results
   end
